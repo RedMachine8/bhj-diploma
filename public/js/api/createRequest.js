@@ -36,53 +36,6 @@ const createRequest = (options = {}) => {
     }
 };
 
-class Entity {
-    static URL = '';
-
-    static list(data, callback) {
-        createRequest({
-            url: this.URL,
-            data,
-            method: 'GET',
-            callback
-        });
-    }
-
-    static remove(data, callback) {
-        createRequest({
-            url: this.URL,
-            data,
-            method: 'DELETE',
-            callback
-        })
-    }
-
-    static create(data, callback) {
-        createRequest({
-            url: this.URL,
-            data,
-            method: 'PUT',
-            callback
-        });
-    }
-}
-
-class Account extends Entity {
-    static URL = '/account';
-
-    static get(id, callback) {
-        createRequest({
-            url: `${this.URL}/${id}`,
-            method: 'GET',
-            callback
-        });
-    }
-}
-
-class Transaction extends Entity {
-    static URL = '/transaction';
-}
-
 class User {
     static URL = '/user';
     
