@@ -35,28 +35,3 @@ const createRequest = (options = {}) => {
         xhr.send(formData);
     }
 };
-
-class User {
-    static URL = '/user';
-    
-    setCurrent(user) {
-        localStorage.setItem('user', user);
-    }
-
-    current() {
-        const userStr = localStorage.getItem('user');
-        return userStr? userStr : undefined;
-    }
-
-    unsetCurrent() {
-        localStorage.removeItem('user');
-    }
-
-    fetch(callback) {
-        createRequest({
-            url: `${this.URL}/current`,
-            method: 'GET',
-            
-        });
-    }
-}
