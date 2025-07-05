@@ -10,7 +10,7 @@ class User {
    * локальном хранилище.
    * */
   static setCurrent(user) {
-    localStorage.setItem('user', user);
+    localStorage.setItem('user', JSON.stringify(user));
   }
 
   /**
@@ -27,7 +27,7 @@ class User {
    * */
   static current() {
     const userStr = localStorage.getItem('user');
-    return userStr? userStr : undefined;
+    return userStr? JSON.parse(userStr) : undefined;
   }
 
   /**
@@ -81,7 +81,7 @@ class User {
    * */
   static register(data, callback) {
     createRequest({
-      url: this.URL + 'register',
+      url: this.URL + '/register',
       method: 'POST',
       data,
       callback: (err, response) => {
