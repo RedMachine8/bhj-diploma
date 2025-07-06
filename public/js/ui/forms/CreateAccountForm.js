@@ -14,7 +14,7 @@ class CreateAccountForm extends AsyncForm {
         const createModal =  App.getModal('createAccount');
         createModal.close();
         App.update();
-        App.clear();
+        this.element.reset();
       } else {
         alert(response.error);
       }

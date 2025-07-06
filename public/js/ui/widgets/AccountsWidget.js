@@ -93,9 +93,9 @@ class AccountsWidget {
    * */
   onSelectAccount( element ) {
     const activeAccounts = this.element.querySelectorAll('.active');
-    activeAccounts.forEach(acc => {acc.classlist.toggle('active')});
+    activeAccounts.forEach(acc => {acc.classList.toggle('active')});
 
-    element.classlist.add('active');
+    element.classList.add('active');
     App.showPage('transactions', { account_id: element.dataset.id });
   }
 
